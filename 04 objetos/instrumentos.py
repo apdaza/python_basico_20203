@@ -28,6 +28,39 @@ class Bajo(Instrumento):
         else:
             print("tocando bajo en " + nota)
 
+class Tiple(Instrumento):
+
+    def afinar(self):
+        print("afinando tiple")
+
+    def tocar(self, nota = None):
+        if nota is None:
+            print("tocando tiple")
+        else:
+            print("tocando tiple en " + nota)
+
+class Violin(Instrumento):
+
+    def afinar(self):
+        print("afinando violin")
+
+    def tocar(self, nota = None):
+        if nota is None:
+            print("tocando violin")
+        else:
+            print("tocando violin en " + nota)
+
+class Flauta(Instrumento):
+
+    def afinar(self):
+        print("afinando flauta")
+
+    def tocar(self, nota = None):
+        if nota is None:
+            print("tocando flauta")
+        else:
+            print("tocando flauta en " + nota)
+
 if __name__ == "__main__":
     i = Bajo()
     i.afinar()

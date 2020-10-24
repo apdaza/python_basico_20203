@@ -10,6 +10,15 @@ class Musico:
         print("yo soy " + self.nombre)
         print("y toco " + str(type(self.instrumento)))
 
+    def afinar(self):
+        self.instrumento.afinar()
+        self.instrumento.tocar("Do")
+
+    def tocar(self):
+        self.instrumento.tocar()
+
 if __name__ == "__main__":
     m = Musico("Juan", Guitarra())
     m.presentar()
+    m.afinar()
+    m.tocar()
