@@ -23,7 +23,8 @@ class Mazo:
         if jugador:
             self.cartas = []
         else:
-            self.cartas = [Carta(v, p) for v in ["A", "J", "Q", "K"] + [str(x) for x in range(2, 11)]  for p in ["Treboles", "Picas", "Diamantes", "Corazones"]]
+            #self.cartas = [Carta(v, p) for v in ["A", "J", "Q", "K"] + [str(x) for x in range(2, 11)]  for p in ["Treboles", "Picas", "Diamantes", "Corazones"]]
+            self.cartas = [Carta(v, p) for v in ["A"] + [str(x) for x in range(2, 3)]  for p in ["Treboles"]]
             shuffle(self.cartas)
 
     def agregar_carta(self, carta):
@@ -34,7 +35,7 @@ class Mazo:
             carta = self.cartas[0]
             self.cartas = self.cartas[1:]
         else:
-            carta = None # evaluar entregar un comodin
+            carta = Carta("0","Comodin")
         return carta
 
     def informar_valor(self):
@@ -57,16 +58,13 @@ class Mazo:
             for c in self.cartas:
                 c.mostrar_carta()
         else:
+            print("Carta(*, *)")
             for c in self.cartas[1:]:
                 c.mostrar_carta()
 
 if __name__ == "__main__":
     m = Mazo()
-    m.agregar_carta(Carta("A", "Treboles"))
-    m.agregar_carta(Carta("5", "Diamantes"))
-    m.agregar_carta(Carta("Q", "Picas"))
-    print(m.informar_valor())
-    m.mostrar_cartas(True)
-    carta = m.entregar_carta()
+    for i in range(54):
+        carta = m.entregar_carta()
     carta.mostrar_carta()
     print(m.informar_valor())

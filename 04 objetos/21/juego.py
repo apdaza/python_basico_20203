@@ -51,6 +51,9 @@ class Juego:
                 break
             if self.jugador1.informar_valor() >= 18 and self.jugador2.informar_valor() >= 18:
                 jugando = False
+            if self.jugador1.cartas[-1].informar_valor() == 0 or self.jugador2.cartas[-1].informar_valor() == 0: 
+                jugando = False
+                break
 
         self.mostrar_juego(True)
             
