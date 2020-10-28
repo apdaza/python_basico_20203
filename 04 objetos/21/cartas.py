@@ -1,3 +1,5 @@
+from random import shuffle
+
 class Carta:
 
     def __init__(self, valor, pinta):
@@ -22,6 +24,7 @@ class Mazo:
             self.cartas = []
         else:
             self.cartas = [Carta(v, p) for v in ["A", "J", "Q", "K"] + [str(x) for x in range(2, 11)]  for p in ["Treboles", "Picas", "Diamantes", "Corazones"]]
+            shuffle(self.cartas)
 
     def agregar_carta(self, carta):
         self.cartas.append(carta)
