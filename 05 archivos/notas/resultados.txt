@@ -1,0 +1,4 @@
+alumno1, calculo, 35.75
+alumno1, programacion, 44.75
+alumno2, calculo, 37.75
+alumno2, programacion, 50.0

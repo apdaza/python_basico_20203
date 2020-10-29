@@ -1,0 +1,4 @@
+alumno1, calculo, 35, 50, 20
+alumno1, programacion, 40, 45, 50
+alumno2, calculo, 15, 50, 50
+alumno2, programacion, 50, 50, 50
