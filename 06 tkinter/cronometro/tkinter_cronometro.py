@@ -9,7 +9,7 @@ class TkCronometro(Thread):
         self.root = Tk()
         self.crono = Cronometro()
         self.frame = Frame(self.root)
-        self.frame.pack()
+        self.frame.pack() 
 
         self.valor = StringVar()
         self.display = Label(self.frame, textvariable=self.valor, font=("Helvetica", 30))
