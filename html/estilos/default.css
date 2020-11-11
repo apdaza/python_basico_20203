@@ -1,0 +1,45 @@
+body {
+    color: navy;
+    font-size: 15px;
+    background-color: #ffffaa;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ff0000;
+}
+
+#primera_seccion {
+    border: black 1px solid;
+    border-radius: 15px;
+    background-color: white;
+    padding: 5px;
+}
+
+nav {
+    background-color: #aaaaff;
+    color: whitesmoke;
+    border-bottom: #000000 1px solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+nav a {
+    color: whitesmoke;
+}
+
+nav a:hover {
+    color: red;
+}
+
+table {
+    color: grey;
+    background-image: url("../imagenes/fondo.jpg");
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 10px;
+}
+
+th {
+    font-weight: bolder;
+    color: rgb(241, 243, 230);
+    background-color: rgb(15, 15, 100);
+}

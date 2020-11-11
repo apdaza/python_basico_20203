@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo de canvas</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="estilos/default.css">
+        <script>
+            function draw(){
+                var ctx = document.querySelector("canvas").getContext("2d");
+                ctx.fillStyle = "#ffff00";
+                ctx.fillRect(10, 10, 50, 50);
+                var my_gradient=ctx.createLinearGradient(0,0,0,170);
+                my_gradient.addColorStop(0,"navy");
+                my_gradient.addColorStop(1,"white");
+                ctx.fillStyle=my_gradient;
+                ctx.fillRect(40,40,70,70);
+            }
+            window.onload = draw;
+        </script>
+    </head>
+    <body>
+        <nav>
+            <a href="hola.html">Inicio</a>
+            <a href="otro.html">Otro documento HTML</a>
+            <a href="listas.html">Ejemplo de listas</a>
+            <a href="tablas.html">Ejemplo de tablas</a>
+            <a href="formulario.html">Ejemplo de formulario</a>
+            <a href="ejemplo_canvas.html">Ejemplo de canvas</a>
+        </nav>
+        <h1>Ejemplo de canvas</h1>
+        <a href="hola.html">inicio</a>
+        <canvas>
+
+        </canvas>
+    </body>
+</html>
