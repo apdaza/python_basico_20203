@@ -1,0 +1,34 @@
+body {
+    background-color: #e4e3e3;
+    color: #204051;
+}
+
+section {
+    background-color: #84a9ac;
+    border: #3b6978 2px solid;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+    width: 500px;
+}
+
+section h1 {
+    color: #e4e3e3;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    width: 300px;
+    float: right;
+}
+
+table {
+    border: #204051 1px solid;
+    width: 100%; 
+}
+
+td {
+    border-bottom: #204051 1px solid;
+}
