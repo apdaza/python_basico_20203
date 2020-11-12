@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<htm>
+    <head>
+        <title>Formulario</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'default.css') }}">
+    </head>
+    <body>
+        <form action="/resultado" method='post'>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre"><br>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido"><br>
+            <label for="telefono">Telefono</label>
+            <input type="tel" name="telefono"><br>
+            <label for="correo">Correo</label>
+            <input type="email" name="correo"><br>
+            <input type="submit" value="Aceptar">
+        </form> 
+    </body>
+</htm>

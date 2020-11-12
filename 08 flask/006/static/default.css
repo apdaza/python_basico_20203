@@ -1,0 +1,22 @@
+body {
+    background-color: beige;
+    color: chocolate;
+}
+
+table {
+    border: #204051 1px solid;
+    width: 100%; 
+}
+
+td {
+    border-bottom: #204051 1px solid;
+}
+
+label {
+    width: 200px;
+    font-style: italic;
+}
+
+input {
+    width: 500px;
+}

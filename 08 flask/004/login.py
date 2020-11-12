@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask, redirect, url_for, request, render_template
 
 app = Flask(__name__)
 
@@ -12,8 +12,7 @@ def login():
         usuario = request.form['nombre']
         return redirect(url_for('success', nombre = usuario))
     else:
-        usuario = request.args.get['nombre']
-        return redirect(url_for('success', nombre = usuario))
+        return render_template("login.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
