@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estudiantes y notas</title>
+    </head>
+    <body>
+        <nav>
+            <a href="{{ url_for('index')}}">Listar estudiantes</a>
+            <a href="{{ url_for('nuevo')}}">agregar estudiante</a>
+        </nav>
+        <h1>Estudiantes</h1>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Código</th>
+                <th>Correo</th>
+                <th colspan="4">Acciones</th>
+            </tr>
+            {% for r in rows %}
+                <tr>
+                    <td>{{ r.nombre }}</td>
+                    <td>{{ r.apellido }}</td>
+                    <td>{{ r.codigo }}</td>
+                    <td>{{ r.correo }}</td>
+                    <td>Editar</td>
+                    <td>Eliminar</td>
+                    <td>Ver Notas</td>
+                    <td>Agregar Nota</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </body>
+
+
+</html>
