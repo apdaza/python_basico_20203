@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estudiantes y notas</title>
+    </head>
+    <body>
+        <nav>
+            <a href="{{ url_for('index')}}">Listar estudiantes</a>
+            <a href="{{ url_for('nuevo')}}">agregar estudiante</a>
+        </nav>
+        <h1>Eliminar Estudiante</h1>
+        <section id="alerta">
+            <h2>Esta seguro que desea eliminar al estudiante:</h2>
+            <b>Nombre: </b> {{ e.nombre }}<br>
+            <b>Apellido:</b> {{ e.apellido }}<br>
+            <b>Código:</b> {{ e.codigo }}<br>
+            <b>Correo:</b> {{ e.correo }}<br>
+        </section>
+
+        <form action="{{ request.path }}" method="post">
+            <input type="hidden" name="id" value="{{ e.id }}">
+            <input type="submit" value="Aceptar">
+        </form>
+        
+
+    </body>
+
+
+</html>

@@ -79,7 +79,16 @@ def editar_estudiante():
 @app.route('/eliminar_estudiante', methods=['POST', 'GET'])
 def eliminar_estudiante():
     if request.method == 'GET':
-        return "eliminando al estudiante " + str(request.args.get('id'))
+        id = request.args.get('id')
+        e = Estudiante.query.filter_by(id = id).first()
+        return render_template("eliminar.html", e = e)
+    else:
+        id = request.form['id']
+        e = Estudiante.query.filter_by(id = id).first()
+        db.session.delete(e)
+        db.session.commit()
+        return redirect(url_for('index'))
+
 
 @app.route('/ver_notas', methods=['POST', 'GET'])
 def ver_notas():
