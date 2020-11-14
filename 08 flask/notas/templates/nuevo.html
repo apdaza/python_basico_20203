@@ -9,7 +9,17 @@
             <a href="{{ url_for('nuevo')}}">agregar estudiante</a>
         </nav>
         <h1>Nuevo Estudiante</h1>
-
+        <form action="{{ request.path }}" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="Ingrese nombre">
+            <label for="apellido">apellido</label>
+            <input type="text" name="apellido" placeholder="Ingrese apellido">
+            <label for="codigo">Código</label>
+            <input type="text" name="codigo" placeholder="Ingrese codigo">
+            <label for="correo">Correo</label>
+            <input type="email" name="correo" placeholder="Ingrese correo">
+            <input type="submit" value="Aceptar">
+        </form>
         
 
     </body>

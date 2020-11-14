@@ -36,9 +36,24 @@ class Nota(db.Model):
 def index():
     return render_template("index.html", rows = Estudiante.query.all())
 
-@app.route('/nuevo')
+@app.route('/nuevo', methods=['POST', 'GET'])
 def nuevo():
-    return render_template("nuevo.html")
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        codigo = request.form['codigo']
+        correo = request.form['correo']
+        datos = {'nombre': nombre,
+                 'apellido': apellido,
+                 'codigo': codigo,
+                 'correo': correo
+                }
+        e = Estudiante(datos)
+        db.session.add(e)
+        db.session.commit()
+        return redirect(url_for('index'))
+    else:
+        return render_template("nuevo.html")
 
 
 if __name__ == "__main__":
