@@ -90,15 +90,36 @@ def eliminar_estudiante():
         return redirect(url_for('index'))
 
 
-@app.route('/ver_notas', methods=['POST', 'GET'])
+@app.route('/ver_notas', methods=['GET'])
 def ver_notas():
     if request.method == 'GET':
-        return "notas del estudiante " + str(request.args.get('id'))
+        id = request.args.get('id')
+        est = Estudiante.query.filter_by(id = id).first()
+        notas = Nota.query.filter_by(estudiante = id).all()
+        acumulado = 0
+        for n in notas:
+            acumulado += n.valor
+        acumulado /= len(notas)
+
+        return render_template("ver_notas.html", e = est, notas = notas, definitiva = acumulado)
+
+
 
 @app.route('/agregar_nota', methods=['POST', 'GET'])
 def agregar_nota():
     if request.method == 'GET':
-        return "agregando nota al estudiante " + str(request.args.get('id'))
+        id = request.args.get('id')
+        return render_template("agregar_nota.html", id = id)
+    else:
+        id = request.form['id']
+        nota = request.form['nota']
+        datos = {'valor' : nota,
+                'estudiante' : id
+                }
+        n = Nota(datos)
+        db.session.add(n)
+        db.session.commit()
+        return redirect(url_for('index'))
 
 if __name__ == "__main__":
     db.create_all()

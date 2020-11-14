@@ -1,0 +1,24 @@
+body {
+    background-color: #cfee9e;
+    color: #1e2019;
+}
+
+table {
+    background-color: #ffffff;
+    color: #587b7f;
+    border: 1px solid #394032 
+}
+
+th {
+    font-weight: bolder;
+}
+
+#alerta {
+    border: 2px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    color: #587b7f;
+}
+
+#alerta h2 { color: red; }
