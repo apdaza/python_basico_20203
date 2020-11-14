@@ -58,7 +58,23 @@ def nuevo():
 @app.route('/editar_estudiante', methods=['POST', 'GET'])
 def editar_estudiante():
     if request.method == 'GET':
-        return "editando al estudiante " + str(request.args.get('id'))
+        id = request.args.get('id')
+        e = Estudiante.query.filter_by(id = id).first()
+        return render_template("editar.html", e = e)
+    else:
+        id = request.form['id']
+        e = Estudiante.query.filter_by(id = id).first()
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        codigo = request.form['codigo']
+        correo = request.form['correo']
+        e.nombre = nombre
+        e.apellido = apellido
+        e.codigo = codigo
+        e.correo = correo
+        db.session.commit()
+        return redirect(url_for('index'))
+
 
 @app.route('/eliminar_estudiante', methods=['POST', 'GET'])
 def eliminar_estudiante():

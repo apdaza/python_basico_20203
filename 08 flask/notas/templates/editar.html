@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estudiantes y notas</title>
+    </head>
+    <body>
+        <nav>
+            <a href="{{ url_for('index')}}">Listar estudiantes</a>
+            <a href="{{ url_for('nuevo')}}">agregar estudiante</a>
+        </nav>
+        <h1>Nuevo Estudiante</h1>
+        <form action="{{ request.path }}" method="post">
+            <input type="hidden" name="id" value="{{ e.id }}">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="Ingrese nombre" value="{{ e.nombre }}">
+            <label for="apellido">apellido</label>
+            <input type="text" name="apellido" placeholder="Ingrese apellido" value="{{ e.apellido }}">
+            <label for="codigo">Código</label>
+            <input type="text" name="codigo" placeholder="Ingrese codigo" value="{{ e.codigo }}">
+            <label for="correo">Correo</label>
+            <input type="email" name="correo" placeholder="Ingrese correo" value="{{ e.correo }}">
+            <input type="submit" value="Aceptar">
+        </form>
+        
+
+    </body>
+
+
+</html>
