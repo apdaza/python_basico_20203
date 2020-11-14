@@ -55,6 +55,25 @@ def nuevo():
     else:
         return render_template("nuevo.html")
 
+@app.route('/editar_estudiante', methods=['POST', 'GET'])
+def editar_estudiante():
+    if request.method == 'GET':
+        return "editando al estudiante " + str(request.args.get('id'))
+
+@app.route('/eliminar_estudiante', methods=['POST', 'GET'])
+def eliminar_estudiante():
+    if request.method == 'GET':
+        return "eliminando al estudiante " + str(request.args.get('id'))
+
+@app.route('/ver_notas', methods=['POST', 'GET'])
+def ver_notas():
+    if request.method == 'GET':
+        return "notas del estudiante " + str(request.args.get('id'))
+
+@app.route('/agregar_nota', methods=['POST', 'GET'])
+def agregar_nota():
+    if request.method == 'GET':
+        return "agregando nota al estudiante " + str(request.args.get('id'))
 
 if __name__ == "__main__":
     db.create_all()

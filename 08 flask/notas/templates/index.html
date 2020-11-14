@@ -10,7 +10,7 @@
         </nav>
         <h1>Estudiantes</h1>
 
-        <table>
+        <table border="1">
             <tr>
                 <th>Nombre</th>
                 <th>Apellido</th>
@@ -24,10 +24,10 @@
                     <td>{{ r.apellido }}</td>
                     <td>{{ r.codigo }}</td>
                     <td>{{ r.correo }}</td>
-                    <td>Editar</td>
-                    <td>Eliminar</td>
-                    <td>Ver Notas</td>
-                    <td>Agregar Nota</td>
+                    <td><a href="/editar_estudiante?id={{ r.id }}">Editar</a></td>
+                    <td><a href="/eliminar_estudiante?id={{ r.id }}">Eliminar</a></td>
+                    <td><a href="/ver_notas?id={{ r.id }}">Ver Notas</a></td>
+                    <td><a href="/agregar_nota?id={{ r.id }}">Agregar Nota</a></td>
                 </tr>
             {% endfor %}
         </table>
